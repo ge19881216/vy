@@ -12,11 +12,11 @@ jobs:
            with：
                 token：${{ secrets.GH_pat }}
          - name：bump count
-            run：/
+            run：|
                 n=$(cat count.json)
                 echo $((n+1))＞count.json
          - name：提交
-            run：/
+            run：|
                 git config user.name box
                 git config user.email box@example.com
                 git add count.json
